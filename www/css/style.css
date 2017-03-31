@@ -1,0 +1,136 @@
+/* Empty. Add your own CSS if you like */
+
+.bg{
+	background: #01b084;
+}
+
+.item-floating-label{
+	border:none;
+	 margin-bottom: 5px; 
+	 border-color: #ffffff !important;
+	 color: #ffffff !important
+}
+
+.cust-input{
+	color: #ffffff !important
+}
+
+.input_error_msg{
+	color:red !important;
+}
+
+.rounded-button{
+	border-radius: 100px;
+	color: #01b084;
+	background: #ffffff
+}
+.bar-balanced{
+	background: #01b084 !important;
+}
+
+.Challenge_cat_0 video {
+    position: relative;
+    left: 50%;
+    top: 0%;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    /* The following will size the video to fit the full container. Not necessary, just nice.*/
+    min-width: 100%;
+    min-height: 100%;
+   -webkit-transform: translate(-50%,0%);
+    -moz-transform: translate(-50%,0%);
+    -ms-transform: translate(-50%,0%);
+    transform: translate(-50%,0%);
+    z-index: 0;
+}
+
+.Challenge_cat_x video {
+        position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    /* The following will size the video to fit the full container. Not necessary, just nice.*/
+    min-width: 100%;
+    min-height: 100%;
+   -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-15%);
+    z-index: 0;
+}
+
+.Challenge_cat_0 div {
+    position: relative;
+    z-index: 1;
+}
+
+.Challenge_cat_x div {
+    position: relative;
+    z-index: 1;
+}
+
+.menu-open .bar.bar-header.expanded {
+    background-position: initial !important;
+    background-size: 100% !important;
+}
+
+#menu_list>div.list{
+    height: 90%
+}
+
+.menu_bg{
+    background: -moz-linear-gradient(269deg, rgba(2,214,161,1) 70%, rgba(2,214,161,1) 74%, rgba(0,0,0,1) 100%); /* ff3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(70%, rgba(2,214,161,1)), color-stop(74%, rgba(2,214,161,1)), color-stop(100%, rgba(0,0,0,1))); /* safari4+,chrome */
+background: -webkit-linear-gradient(269deg, rgba(2,214,161,1) 70%, rgba(2,214,161,1) 74%, rgba(0,0,0,1) 100%); /* safari5.1+,chrome10+ */
+background: -o-linear-gradient(269deg, rgba(2,214,161,1) 70%, rgba(2,214,161,1) 74%, rgba(0,0,0,1) 100%); /* opera 11.10+ */
+background: -ms-linear-gradient(269deg, rgba(2,214,161,1) 70%, rgba(2,214,161,1) 74%, rgba(0,0,0,1) 100%); /* ie10+ */
+background: linear-gradient(181deg, rgba(2,214,161,1) 70%, rgba(2,214,161,1) 74%, rgba(0,0,0,1) 100%); /* w3c */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#02D6A1', endColorstr='#000000',GradientType=0 ); /* ie6-9 */
+}
+
+.menu_header{
+
+}
+
+.profile_input{
+  border: 1px solid rgba(250, 250, 250, 0.26); background: #ffffff; border-radius: 5px;
+}
+
+.profile_bg {
+    background: -moz-linear-gradient(87deg, rgba(1,140,106,1) 0%, rgba(0,71,59,1) 37%, rgba(0,33,33,1) 58%); /* ff3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(42%, rgba(0,33,33,1)), color-stop(63%, rgba(0,71,59,1)), color-stop(100%, rgba(1,140,106,1))); /* safari4+,chrome */
+background: -webkit-linear-gradient(87deg, rgba(1,140,106,1) 0%, rgba(0,71,59,1) 37%, rgba(0,33,33,1) 58%); /* safari5.1+,chrome10+ */
+background: -o-linear-gradient(87deg, rgba(1,140,106,1) 0%, rgba(0,71,59,1) 37%, rgba(0,33,33,1) 58%); /* opera 11.10+ */
+background: -ms-linear-gradient(87deg, rgba(1,140,106,1) 0%, rgba(0,71,59,1) 37%, rgba(0,33,33,1) 58%); /* ie10+ */
+background: linear-gradient(3deg, rgba(1,140,106,1) 0%, rgba(0,71,59,1) 37%, rgba(0,33,33,1) 58%); /* w3c */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002121', endColorstr='#018C6A',GradientType=0 ); /* ie6-9 */
+}
+
+.noUi-tooltip {
+  opacity: 0.8
+}
+
+.noUi-horizontal .noUi-handle-upper .noUi-tooltip {
+  bottom: 28px !important;
+  top: -32px !important;
+}
+
+.noUi-connect {
+
+}
+
+.edit-video ion-segment-button ion-icon {
+  position: relative;
+  top: 2px;
+}
+
+video:-webkit-full-screen     { max-height: 100%; }
+
+.show{
+    display: none !important;
+}
+
+.hide{
+    display: block !important;
+}

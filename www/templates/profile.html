@@ -1,0 +1,132 @@
+<ion-view view-title="Profile" align-title="center" style="background: #111;">
+<ion-nav-bar class="bar-balanced nav-title-slide-ios7">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+    </ion-nav-bar>
+<ion-content class="profile_bg" style="color: #ffffff">
+
+ <div style="background: url('img/profile_background.png');background-repeat: no-repeat; height: 30%; background-size: 100% 100%;">
+
+<div style="position: absolute; top: 10%;left: 30%;height: 100%;">
+
+	<div class="row" style="position: relative; top: 4%">
+	<div class="col col-50" style="text-align: right;">
+		<img src="img/profile_circle_img.png" style="width: 100%; position: relative;">
+	</div>
+		
+	</div>
+</div>
+
+</div>
+
+<div class="row" style="margin-top: 10%">
+
+	<div style="width: 100%; text-align: center;">
+		<label style="font-weight: bolder;">
+		{{profile.name}}
+	</label><br>
+	<label>
+		Amateur
+	</label>
+	</div>
+		
+</div>
+
+<div class="row">
+
+	<div class="col col-33" style="text-align: center;">
+	<label style="font-size: 130%; font-weight: bolder;">
+		{{all_fav_count}}
+	</label><br>
+	<label>
+		Favorites
+	</label>
+	</div>
+
+	<div class="col col-33" style="text-align: center;">
+	<label style="font-size: 130%; font-weight: bolder;">
+	  {{all_video_count}}
+	</label><br>
+	<label>
+		Videos
+	</label>
+	</div>
+
+	<div class="col col-33" style="text-align: center;">
+	<label style="font-size: 130%; font-weight: bolder;">
+		{{challenges_count}}
+	</label><br>
+	<label>
+		Challenges
+	</label>
+	</div>
+</div>
+<form name="profileForm" novalidate>
+<div class="row">
+
+<div class="col col-20">
+	<label>Name</label>
+</div>
+<div class="col col-70">
+<label class="item item-input item-floating-label" style="margin-bottom: 0; padding: 0!important">
+          <input ng-model="profile.name" name="name"  type="text" style="border: 1px solid rgba(250, 250, 250, 0.26); background: #ffffff; border-radius: 5px;" required placeholder="Username" force-lowercase>
+           <p ng-show="profileForm.name.$invalid && profileForm.name.$dirty" class="input_error_msg">Enter your name</p>
+ </label> 
+</div>
+
+</div>
+
+<div class="row">
+
+<div class="col col-20">
+	<label>Email</label>
+</div>
+<div class="col col-70">
+	<label class="item item-input item-floating-label" style="margin-bottom: 0; padding: 0!important">
+          <input ng-model="profile.email" name="email" readonly  type="text" style="border: 1px solid rgba(250, 250, 250, 0.26); background: #ffffff; border-radius: 5px;" required placeholder="Username" force-lowercase validate-email>
+ </label> 
+</div>
+
+</div>
+
+<div class="row">
+
+<div class="col col-20">
+	<label>Phone</label>
+</div>
+<div class="col col-70">
+	<label class="item item-input item-floating-label" style="margin-bottom: 0; padding: 0!important">
+          <input ng-model="profile.phone" name="phone" style="border: 1px solid rgba(250, 250, 250, 0.26); background: #ffffff; border-radius: 5px;"  type="tel" required placeholder="Username">
+           <p ng-show="profileForm.phone.$invalid && profileForm.phone.$dirty" class="input_error_msg">Enter your phone</p>
+ </label> 
+</div>
+
+</div>
+
+<div class="row">
+
+<div class="col col-20">
+	<label>Country</label>
+</div>
+<div class="col col-70">
+	<label class="item item-input item-floating-label" style="margin-bottom: 0; padding: 0!important">
+    <input ng-model="profile.country" name="country"  type="text" style="border: 1px solid rgba(250, 250, 250, 0.26); background: #ffffff; border-radius: 5px;" required>
+           <p ng-show="profileForm.country.$invalid && profileForm.country.$dirty" class="input_error_msg">Enter your country name</p>
+ </label> 
+</div>
+
+</div>
+
+<div class="row">
+	<div class="col col-50" style="text-align: center;">
+		<button ng-click="" type="Submit" ng-disabled="VideoForm.$invalid" style="background: #ffffff; color: #01b084; width: inherit;" class="button button-full button-balanced"> Cancel </button>
+	</div>
+	<div class="col col-50" style="text-align: center; ">
+		<button ng-click="updateUser()" type="Submit" ng-disabled="VideoForm.$invalid" style="background: #ffffff; color: #01b084; width: inherit;" class="button button-full button-balanced"> Save </button>	
+	</div>
+</div>
+</form>
+
+</ion-content>
+
+</ion-view>

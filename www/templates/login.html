@@ -1,0 +1,74 @@
+<ion-view  class="bg">
+<ion-nav-view animation="slide-left-right" hide-nav-bar="true"></ion-nav-view>
+<ion-content style="padding-top:15px">
+
+<div style="text-align: center;">
+  <img src="img/logo.png" alt="logo" style="width: 12%">
+</div>
+
+  <form name="LoginForm" novalidate>
+      <div class="row">
+        <label class="item item-input item-floating-label">
+          <span class="input-label"> Username </span>
+          <input ng-model="formdata.email" name="email" type="email" validate-email class="cust-input" required placeholder="Username" force-lowercase>
+           <p ng-show="LoginForm.email_or_phone.$invalid && LoginForm.email_or_phone.$dirty" class="input_error_msg">Enter your email</p>
+        </label> 
+     </div>
+
+      <div class="row">
+        <label class="item item-input item-floating-label">
+          <span class="input-label">password</span>
+          <input type="password" name="password" ng-model="formdata.password" ng-minlength="3" class="cust-input"  required placeholder="Password">
+           <div ng-show="LoginForm.password.$invalid && LoginForm.password.$dirty">
+            <p ng-show="LoginForm.password.$error.required"  class="input_error_msg">Password Required</p>
+            <p ng-show="LoginForm.password.$error.minlength"  class="input_error_msg">Too Short</p>
+          </div> 
+        </label>
+      </div>
+
+        <div class="row">
+          <a style="margin-left:40%"  ui-sref="verifyEmail" href="/#verify_email">I FORGOT MY PASSWORD
+          </a>
+     </div>
+
+        <div class="padding">
+            <button ng-click="loginWithEmail()" style="background: #ffffff; color: #01b084"  ng-disabled="LoginForm.$invalid" class="button button-full button-balanced rounded-button">Login</button>
+        </div>
+</form>
+<div class="row">
+  <div class="col col-30">
+    <hr>
+  </div>
+  <div class="col col-30" style="text-align: center; color: #ffffff">
+    Sync With
+  </div>
+  <div class="col col-30">
+    <hr>
+  </div>
+</div>
+
+
+
+<div class="row">
+  <div class="col col-30" style="text-align: center;">
+    <img src="img/btn_facebook.png" alt="logo" ng-click="loginWithFacebook()" style="width: 60%">
+  </div>
+  <div class="col col-30" style="text-align: center;">
+    <img src="img/btn_twitter.png" alt="logo" ng-click="loginWithTwitter()" style="width: 60%">
+  </div>
+  <div class="col col-30" style="text-align: center;">
+    <img src="img/btn_google.png" alt="logo" ng-click="loginWithGoogle()" style="width: 60%">
+  </div>
+</div>
+
+<div class="row">
+  <div style="width: 80%; text-align: center;">
+    <hr style=" margin-left: 30%; margin-right: 10%;">
+  </div>
+</div>
+<div style="text-align: center;">
+  <a ui-sref="registration" href="/#registration" style="color: #ffffff; font-weight: bolder; font-size: 25px;  text-decoration: none">Register</a>
+</div>
+       
+    </ion-content>
+</ion-view>

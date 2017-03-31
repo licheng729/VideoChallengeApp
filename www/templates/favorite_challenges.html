@@ -1,0 +1,66 @@
+<ion-view view-title="Favorites Challenges" align-title="center" ng-init="loadAllChallenge()" style="background: #111;">
+
+ <ion-floating-menu backdrop="true" has-footer="false" button-color="#fff" icon="ion-plus" icon-color="#01b084">
+            <ion-floating-item  icon="ion-camera" text="Record" click="recordVideo()"></ion-floating-item>
+            <ion-floating-item   icon="ion-upload" text="Upload" click="uploadVideo()"></ion-floating-item>
+      </ion-floating-menu> 
+
+<ion-content>
+<ion-list ng-model="data.categories">
+
+
+<ion-item ng-repeat="challenges in data.categories" class="Challenge_cat_0">
+   <video width="" height="{{dev_height}}" class="video {{challenges[0].is_autoplay}}" style="background: #000000" muted="muted" poster="{{challenges[0].video_poster}}">
+  <source src="{{challenges[0].video_url | trustedlink}}">
+  Your browser does not support the video tag.
+</video>
+<div style="position: absolute;top: 2%; height: 100%">
+	<div class="row">
+		<div style="float: left;">
+			<img src="img/icon_cup.png" style="width: 5%">
+			<label style="position: relative; top: -3px; color: #fff">{{challenges.length - 3}} challenges</label>
+		</div>
+
+		<div style="float: right;">
+			<label style="position: relative; top: -3px; color: #fff">{{challenges[0].challenge_name}}</label>
+		</div>
+	</div>
+
+	<div class="row" style="position: relative; top: 1%">
+	<div class="col col-60" style="text-align: right;">
+		<img src="img/ic_roundplay.png" style="width: 25%; position: relative; top: 25%;" ng-click="goToCatChal(challenges[0].challenge_name)">
+	</div>
+
+     <div class="col col-40" style="text-align: right;">
+		<img src="img/arrow_up.png" style="width: 25%"><br>
+		<label style="color: #fff">{{challenges[challenges.length - 3]}}</label><br>
+		<img src="img/arrow_down.png" style="width: 25%">
+	</div>
+		
+	</div>
+
+	<div class="row" style="position: absolute; bottom: 10%">
+	<div class="col col-30" style="text-align: center;">
+		<img src="img/ic_coments.png" style="width: 20%">
+			<label style="position: relative; top: -3px; color: #fff">{{challenges[challenges.length - 2]}} comment(s)</label>
+	</div>
+	<div class="col col-30" style="text-align: center;">
+	<img src="img/ic_share.png" style="width: 20%" ng-click="shareVideChallenges(challenges[0].challenge_name, challenges[0].video_url)">
+			<label style="position: relative; top: -3px; color: #fff">share</label>
+		
+	</div>
+	<div class="col col-30" style="text-align: center;">
+		<img src="img/ic_favoriteRed.png" ng-show="{{challenges[challenges.length - 1]}}" class="favred" style="width: 20%" ng-click="addFav($event,challenges[0].challenge_name)">
+		<img src="img/ic_favorite.png" ng-show="!{{challenges[challenges.length - 1]}}" class="fav" style="width: 20%" ng-click="addFav($event, challenges[0].challenge_name)">
+		<label style="position: relative; top: -3px; color: #fff">favorite</label>
+	</div>	
+	</div>
+
+</div>
+</ion-item>
+
+</ion-list> 
+
+ </ion-content>
+
+</ion-view>

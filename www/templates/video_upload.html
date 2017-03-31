@@ -1,0 +1,70 @@
+<ion-view view-title="Upload Video" align-title="center" style="background: #111;">
+<ion-nav-bar class="bar-balanced nav-title-slide-ios7">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+    </ion-nav-bar>
+<ion-content class="bg">
+
+ <div class="Challenge_cat_0 row" style="background-color: #000000">
+   <video  height="{{dev_height}}" id="video_to_upload" style="background: #000000">
+  <source src="{{videoPathUrl}}">
+  Your browser does not support the video tag.
+</video>
+<div style="position: absolute; top: 10%;left: 40%;">
+
+	<div class="row" style="position: relative;">
+	<div class="col col-50" style="text-align: right;">
+		<img src="img/ic_play.png" ng-click="playCurrentVideo()" style="width: 100%; position: relative;">
+	</div>
+		
+	</div>
+</div>
+
+</div>
+
+<div>
+    <div style="margin: 2px 15px 9px 15px;">
+      <div id="trim-slider"></div>
+    </div>
+ </div>
+<form name="VideoForm" novalidate>
+	<div class="row" style="margin-bottom: 5%;">
+  <label class="item item-select">
+    <select ng-model="videoFormData.cat" required style="direction: inherit; width: 100%; min-height: 40px; color: #fff; border-color: #fff;">
+      <option value="">Select Category</option>
+      <option value="Break Dance">Break Dance</option>
+    </select>
+  </label>
+</div>
+
+<div class="row" style="margin-bottom: 5%;" >
+  <label class="item item-select" style="width: 85%;  border-color: white;" ng-show="sel_chal">
+    <select ng-model="videoFormData.chal" style="direction: inherit; width: 100%; min-height: 40px; color: #fff; border-color: transparent;">
+      <option value="">Select Challenge</option>
+      <option value="Moon Walk">Moon Walk</option>
+    </select>
+  </label>
+
+  <label class="item item-input item-floating-label" style="padding: 0;" ng-show="add_chal">
+          <input ng-model="videoFormData.cust_chal" name="cust_chal" type="text" style="border: 1px solid #fff; min-height: 40px;" class="cust-input" required placeholder="Enter New Challenge name">
+  </label>
+  <div style="margin-left: 5%; width: 10%">
+    <img src="img/ic_roundplus.png" alt="plus_btn" ng-click="addNewChal()" ng-show="sel_chal" style="width: 100%">
+     <img src="img/arrow_forward.png" alt="plus_btn" ng-click="selChal()" ng-show="add_chal" style="width: 100%">
+  </div>
+</div>
+
+   <div class="row">
+        <label class="item item-input item-floating-label" style="padding: 0;">
+          <input ng-model="videoFormData.vid" name="vid_name" type="text" style="border: 1px solid #fff; min-height: 40px;" class="cust-input" required placeholder="Video Name">
+        </label> 
+     </div>
+
+ <div class="padding" style="text-align: center;">
+    <button ng-click="uploadVideoToServer()" type="Submit" ng-disabled="VideoForm.$invalid" style="background: #ffffff; color: #01b084; width: inherit;" class="button button-full button-balanced"> Submit </button>
+  </div>
+</form>
+
+</ion-content>
+
+</ion-view>

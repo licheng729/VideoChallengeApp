@@ -1,0 +1,73 @@
+<ion-view view-title="{{current_video.video_name}}" align-title="center" style="background: #111;">
+<ion-nav-bar class="bar-balanced nav-title-slide-ios7">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+    </ion-nav-bar>
+
+     <ion-nav-buttons side="right">
+      <img src="img/ic_roundplus.png" alt="plus_btn" style="width: 40%">
+ </ion-nav-buttons>
+<ion-content class="bg">
+
+ <div class="Challenge_cat_0 row" style="padding: 0 !important;">
+   <video id="current_video" width="" height="{{dev_height}}" style="background: #000000"  poster="{{current_video.video_poster}}">
+  <source src="{{current_video.video_url | trustedlink}}" type="">
+  Your browser does not support the video tag.
+</video>
+<div style="position: absolute; top: 10%;left: 40%;">
+
+	<div class="row" style="position: relative; top: 0">
+	<div class="col col-50">
+		<img src="img/ic_roundplay.png" ng-show="show_play_btn" ng-click="playCurrentVideo()" style="width: 50%; position: relative;">
+	</div>
+		
+	</div>
+</div>
+
+</div>
+<div class="row" style="padding-top: 10px">
+	<div class="col col-30" style="text-align: center;">
+		<img src="{{fav_img}}" style="width: 20%" ng-click="addFav($event,current_video.video_id)">
+		<label style="position: relative; top: -3px; color: #fff">Favorite</label>
+	</div>
+	<div class="col col-30" style="text-align: center;">
+	<img src="img/ic_share.png" style="width: 20%" ng-click="shareVideo()">
+			<label style="position: relative; top: -3px; color: #fff">share</label>		
+	</div>
+	<div class="col col-30" style="text-align: center;">
+		<img src="img/arrow_up.png" style="width: 20%" ng-click="upVote()">
+			<label style="position: relative; top: -3px; color: #fff">{{current_video.up_vote + current_video.favorite_count + current_video.comments_count}}</label>
+	    <img src="img/arrow_down.png" ng-click="downVote()" style="width: 20%">
+	</div>	
+</div>
+
+<div ng-model="comments"  class="list" style="border-top: 1px solid #fff">			
+
+	<a class="item item-thumbnail-left" style="padding-left: 56px; white-space: inherit;" ng-repeat="comment in comments">
+	           <img src="img/profile_circle_img.png" style=" max-width: 50px;left: 0;top: 15px;max-height: 50px">
+			<label style=" color: #fff; font-weight: bolder;">{{comment.name}}</label><br>
+			<label style=" color: #fff">{{comment.comment}}</label><br>
+			<label style=" color: #fff; font-weight: bolder;">{{comment.date_time}}</label>
+	</a>
+
+</div>
+
+<div class="row bg" style=" border-top: 1px solid #fff">
+	<div class="col col-20">
+			<img src="img/profile_circle_img.png" style="width: 100%">
+	</div>
+	<div class="col col-70" >
+	     <label class="item item-input item-floating-label">
+          <input type="text" style="min-height: 40px; border: 1px solid #fff !important;" name="comments"  ng-model="comment.comment"  class="cust-input"  required placeholder="add a comment">
+
+        </label>
+	</div>
+
+	<div class="col col-10" style="text-align: right;">
+		<img src="img/ic_play.png" ng-click="postComment() " style="width: 90%; position: relative;">
+	</div>
+</div>
+
+</ion-content>
+
+</ion-view>

@@ -1,0 +1,69 @@
+<ion-view  class="bg">
+<ion-nav-view animation="slide-left-right" hide-nav-bar="true"></ion-nav-view>
+<ion-content style="padding-top:15px">
+
+<div style="text-align: center;">
+  <img src="img/logo.png" alt="logo" style="width: 12%">
+</div>
+
+  <form name="RegitrationForm" novalidate>
+      <div class="row">
+        <label class="item item-input item-floating-label">
+          <span class="input-label"> Email </span>
+          <input ng-model="formdata.email" name="email" validate-email type="email" class="cust-input" required placeholder="Email" force-lowercase>
+           <p ng-show="RegitrationForm.email.$invalid && RegitrationForm.email.$dirty" class="input_error_msg">Enter your email or password?</p>
+        </label> 
+     </div>
+
+      <div class="row">
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Password</span>
+          <input type="password" name="password" ng-model="formdata.password" ng-minlength="3" class="cust-input"  required placeholder="Password">
+           <div ng-show="RegitrationForm.password.$invalid && RegitrationForm.password.$dirty">
+            <p ng-show="RegitrationForm.password.$error.required"  class="input_error_msg">Password Required</p>
+            <p ng-show="RegitrationForm.password.$error.minlength"  class="input_error_msg">Too Short</p>
+          </div> 
+        </label>
+      </div>
+
+      <div class="row">
+        <label  class="item item-input item-floating-label">
+          <span class="input-label">Confirm Password</span>
+          <input type="password" match-password="password" placeholder="Confirm Password" name="repeatedpassword" ng-model="formdata.repeatedpassword" required>
+          <div ng-show="registrationForm.repeatedpassword.$invalid && registrationForm.repeatedpassword.$dirty">
+            <p class="input_error_msg" ng-message="passwordMatch">Do not match</p>
+          </div>         
+        </label>
+      </div>
+
+
+        <div class="padding">
+            <button ng-click="registerUser()" ng-disabled="RegitrationForm.$invalid" style="background: #ffffff; color: #01b084" class="button button-full button-balanced rounded-button">Register</button>
+        </div>
+</form>
+<div class="row">
+  <div class="col col-30">
+    <hr>
+  </div>
+  <div class="col col-30" style="text-align: center; color: #ffffff">
+    Sync With
+  </div>
+  <div class="col col-30">
+    <hr>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col col-30" style="text-align: center;">
+    <img src="img/btn_facebook.png" alt="logo" style="width: 60%">
+  </div>
+  <div class="col col-30" style="text-align: center;">
+    <img src="img/btn_twitter.png" alt="logo" style="width: 60%">
+  </div>
+  <div class="col col-30" style="text-align: center;">
+    <img src="img/btn_google.png" alt="logo" style="width: 60%">
+  </div>
+</div>
+       
+    </ion-content>
+</ion-view>
