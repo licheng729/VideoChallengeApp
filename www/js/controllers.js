@@ -265,7 +265,7 @@ $scope.formdata = {};
 .controller('HomeCtrl', function($scope, $ionicNavBarDelegate) {
   $ionicNavBarDelegate.showBackButton(false);
 
-  $scope.name = window.localStorage.getItem('first_name')
+  $scope.name = window.localStorage.getItem('name')
 })
 .controller('AllCatChalCtrl', function($ionicNavBarDelegate, $scope, $window, $state, $ionicHistory, $rootScope, $cordovaCapture, $cordovaCamera, $ionicLoading, $cordovaSocialSharing, $cordovaToast) {
  $ionicHistory.clearHistory();
@@ -1232,7 +1232,7 @@ $scope.shareVideo = function(){
         if($scope.comment.comment !== ""){
 
          var date_time = getDateTime();
-         var first_name = "name";
+         var first_name = window.localStorage.getItem('name');
   var comment = {
       comment: $scope.comment.comment,
       date_time: date_time,
@@ -1679,7 +1679,7 @@ var userId = window.localStorage.getItem('uid');
 
 $scope.profile = {
   email : window.localStorage.getItem('email'),
-  name: window.localStorage.getItem('first_name'),
+  name: window.localStorage.getItem('name'),
   phone: window.localStorage.getItem('phone'),
 };
 
@@ -1689,7 +1689,7 @@ $scope.updateUser = function(){
     console.log('Synchronization succeeded');
     window.plugins.spinnerDialog.hide();
     window.localStorage.setItem('email', $scope.profile.email);
-    window.localStorage.setItem('first_name', $scope.profile.name);
+    window.localStorage.setItem('name', $scope.profile.name);
     window.localStorage.getItem('phone', $scope.profile.phone);
      $ionicPopup.alert({
         title: "Successfull",

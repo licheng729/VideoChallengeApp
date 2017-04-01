@@ -134,3 +134,7 @@ video:-webkit-full-screen     { max-height: 100%; }
 .hide{
     display: block !important;
 }
+
+.bar .title+.buttons.buttons-right{
+    right: -45px
+}
