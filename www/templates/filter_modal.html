@@ -1,0 +1,31 @@
+<ion-modal-view>
+<ion-header-bar class="bar-balanced">
+        <h1 class="title">Select Category</h1>
+ </ion-header-bar>
+<ion-content class="bg">
+<form name="catForm" novalidate>
+
+
+<div class="row" style="font-size: 50px;">  
+  <div class="col col-bottom" style="margin-top: 20%;">
+    <div style="text-align: center;"><label style="font-size: 19px;font-weight: 400; color: #fff">Select A Category</label></div>
+     <div>
+  <label class="item item-select">
+    <select ng-model="selCat" required style="direction: inherit; width: 100%; min-height: 40px; color: #fff; border-color: #fff;">
+      <option value="">Click to Select</option>
+      <option ng-model="dropDownCat" ng-repeat="cat in dropDownCat" value="{{cat}}">{{cat}}</option>
+    </select>
+  </label>
+    </div>
+  </div>
+</div>
+
+<div class="bar bar-footer" style="background:transparent;">
+<div style="width: 100% !important;">
+    <button ng-click="loadFilteredChallenge()" ng-disabled="catForm.$invalid" style=" position: initial;top: 0;right: 0;margin-top: 0; min-width: 100%;" class="button button-full button-calm">Filter</button>
+</div>
+</div>
+
+</ion-content>
+</form>
+</ion-modal-view>

@@ -10,4 +10,7 @@ app
   };
     var FbApp = firebase.initializeApp(config);
     return FbApp.auth();
-});
+})
+.service('global', [function () {
+
+}]);

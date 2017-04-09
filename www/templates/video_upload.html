@@ -30,9 +30,9 @@
 <form name="VideoForm" novalidate>
 	<div class="row" style="margin-bottom: 5%;">
   <label class="item item-select">
-    <select ng-model="videoFormData.cat" required style="direction: inherit; width: 100%; min-height: 40px; color: #fff; border-color: #fff;">
+    <select ng-model="videoFormData.cat" ng-change="updateChallengeDropdown()" required style="direction: inherit; width: 100%; min-height: 40px; color: #fff; border-color: #fff;">
       <option value="">Select Category</option>
-      <option value="Break Dance">Break Dance</option>
+      <option ng-model="dropDownCat" ng-repeat="cat in dropDownCat" value="{{cat}}">{{cat}}</option>
     </select>
   </label>
 </div>
@@ -41,12 +41,12 @@
   <label class="item item-select" style="width: 85%;  border-color: white;" ng-show="sel_chal">
     <select ng-model="videoFormData.chal" style="direction: inherit; width: 100%; min-height: 40px; color: #fff; border-color: transparent;">
       <option value="">Select Challenge</option>
-      <option value="Moon Walk">Moon Walk</option>
+      <option ng-model="dropDownChal" ng-repeat="chal in dropDownChal" value="{{chal}}">{{chal}}</option>
     </select>
   </label>
 
   <label class="item item-input item-floating-label" style="padding: 0;" ng-show="add_chal">
-          <input ng-model="videoFormData.cust_chal" name="cust_chal" type="text" style="border: 1px solid #fff; min-height: 40px;" class="cust-input" required placeholder="Enter New Challenge name">
+          <input ng-model="videoFormData.cust_chal" name="cust_chal" type="text" style="border: 1px solid #fff; min-height: 40px;" class="cust-input" placeholder="Enter New Challenge name">
   </label>
   <div style="margin-left: 5%; width: 10%">
     <img src="img/ic_roundplus.png" alt="plus_btn" ng-click="addNewChal()" ng-show="sel_chal" style="width: 100%">

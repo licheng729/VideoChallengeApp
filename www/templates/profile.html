@@ -5,15 +5,15 @@
     </ion-nav-bar>
 <ion-content class="profile_bg" style="color: #ffffff">
 
- <div style="background: url('img/profile_background.png');background-repeat: no-repeat; height: 30%; background-size: 100% 100%;">
+ <div style="background: url('{{profile_pic_bck}}');background-repeat: no-repeat; height: 30%; background-size: 100% 100%;">
 
 <div style="position: absolute; top: 10%;left: 30%;height: 100%;">
 
 	<div class="row" style="position: relative; top: 4%">
 	<div class="col col-50" style="text-align: right;">
-		<img src="img/profile_circle_img.png" style="width: 100%; position: relative;">
+		<img src="{{profile_pic}}" ng-click="showProfilePicActionSheet($event)" class="img-circle-profile" >
 	</div>
-		
+		<i class="ion-compose" ng-click="showBckProfilePicActionSheet($event)" style="font-size: 30px;position: relative;left: 100%;top: 50px;"></i>
 	</div>
 </div>
 
@@ -45,7 +45,7 @@
 
 	<div class="col col-33" style="text-align: center;">
 	<label style="font-size: 130%; font-weight: bolder;">
-	  {{all_video_count}}
+	  {{challengerVideos}}
 	</label><br>
 	<label>
 		Videos
@@ -54,10 +54,10 @@
 
 	<div class="col col-33" style="text-align: center;">
 	<label style="font-size: 130%; font-weight: bolder;">
-		{{challenges_count}}
+		{{challengerScore}}
 	</label><br>
 	<label>
-		Challenges
+		Scores
 	</label>
 	</div>
 </div>
@@ -83,7 +83,7 @@
 </div>
 <div class="col col-70">
 	<label class="item item-input item-floating-label" style="margin-bottom: 0; padding: 0!important">
-          <input ng-model="profile.email" name="email" readonly  type="text" style="border: 1px solid rgba(250, 250, 250, 0.26); background: #ffffff; border-radius: 5px;" required placeholder="Username" force-lowercase validate-email>
+          <input ng-model="profile.email" name="email"  type="text" style="border: 1px solid rgba(250, 250, 250, 0.26); background: #ffffff; border-radius: 5px;" required placeholder="Username" force-lowercase validate-email>
  </label> 
 </div>
 
@@ -96,7 +96,7 @@
 </div>
 <div class="col col-70">
 	<label class="item item-input item-floating-label" style="margin-bottom: 0; padding: 0!important">
-          <input ng-model="profile.phone" name="phone" style="border: 1px solid rgba(250, 250, 250, 0.26); background: #ffffff; border-radius: 5px;"  type="tel" required placeholder="Username">
+          <input ng-model="profile.phone" name="phone" style="border: 1px solid rgba(250, 250, 250, 0.26); background: #ffffff; border-radius: 5px;"  type="tel" required placeholder="Phone">
            <p ng-show="profileForm.phone.$invalid && profileForm.phone.$dirty" class="input_error_msg">Enter your phone</p>
  </label> 
 </div>
@@ -119,7 +119,7 @@
 
 <div class="row">
 	<div class="col col-50" style="text-align: center;">
-		<button ng-click="" type="Submit" ng-disabled="VideoForm.$invalid" style="background: #ffffff; color: #01b084; width: inherit;" class="button button-full button-balanced"> Cancel </button>
+		<button ng-click="" type="Submit" ui-sref="main.all_cat_challenge" ng-disabled="VideoForm.$invalid" style="background: #ffffff; color: #01b084; width: inherit;" class="button button-full button-balanced"> Cancel </button>
 	</div>
 	<div class="col col-50" style="text-align: center; ">
 		<button ng-click="updateUser()" type="Submit" ng-disabled="VideoForm.$invalid" style="background: #ffffff; color: #01b084; width: inherit;" class="button button-full button-balanced"> Save </button>	

@@ -1,19 +1,10 @@
-<ion-view view-title="{{currentChal}}" align-title="center" style="background: #111;">
+<ion-view view-title="Favorite videos" align-title="center" style="background: #111;">
 <ion-nav-bar class="bar-balanced nav-title-slide-ios7">
       <ion-nav-back-button>
       </ion-nav-back-button>
     </ion-nav-bar>
 
-  <!--<ion-nav-buttons side="right">
-      <button ng-show="show_all" style="font-size: 14px;text-transform: capitalize;  min-height: 44px; min-width: 44px;max-width: 68px;margin-bottom: 0;max-height: 44px;width: 58px;" class="button button-clear" ng-click="showFav()">
-        Favorite
-      </button>
 
-      <button ng-show="show_fav" style="font-size: 14px;text-transform: capitalize;  min-height: 44px; min-width: 44px; max-width: 68px;
-    margin-bottom: 0;max-height: 44px;width: 58px;" class="button button-clear" ng-click="showAll()">
-        All
-      </button>
- </ion-nav-buttons>-->
  <ion-floating-menu backdrop="true" has-footer="false" button-color="#fff" icon="ion-plus" icon-color="#01b084">
             <ion-floating-item  icon="ion-camera" text="Record" click="recordVideo()"></ion-floating-item>
             <ion-floating-item   icon="ion-upload" text="Upload" click="uploadVideo()"></ion-floating-item>
@@ -21,43 +12,41 @@
 
 
 <ion-content>
-<ion-list id="all_video">
+<ion-list >
 
 
- <ion-item class="Challenge_cat_0" ng-model="data.challenge" ng-repeat="video in data.challenge">
+ <ion-item class="Challenge_cat_0" ng-model="data.favVids"  ng-repeat="video in data.favVids">
    <video width="" height="{{dev_height}}" style="background: #000000" class="{{video.is_autoplay}}"  muted="muted" poster="{{video.video_poster}}">
   <source src="{{video.video_url | trustedlink}}" >
   Your browser does not support the video tag.
 </video>
-<div style="position: absolute;top: 2%; height: 100%; width: 100%;">
+<div style="position: absolute;top: 2%; height: 100%">
 	<div class="row">
 		<div style="float: left;">
 			<img src="{{video.challenger_profile_picture}}" class="img-circle-menu" style="width: 25%">
 			<label style="position: relative; top: -11px; color: #fff">{{video.chalenger_name}}</label>
 		</div>
-
  
-		<div style=" float: right;text-align: right; width: 50%;max-width: 50%; min-width: 50%;">
+		<div style="    float: right;
+    text-align: right;
+    width: 50%;
+    max-width: 50%;
+    min-width: 50%;">
 			<label style="position: relative; top:15%; color: #fff">{{video.video_name}}</label>
 		</div>
 	</div>
-<div class="row">
-	  <div style="width: 100%; text-align: center">
-			<label style="color: #fff; padding-right: 8px;">{{video.video_score}}</label><br>
-		</div>
-</div>
-       
+
 
 	<div class="row" style="position: relative; top: 1%">
 	<div class="col col-60" style="text-align: right;">
-		<img src="img/ic_roundplay.png" style="width: 25%; position: relative; top: 25%;" ng-click="goToChal(video.video_id)">
+	<img src="img/ic_roundplay.png" style="width: 25%; position: relative; top: 25%;" ng-click="goToChal(video.video_id,video.category,video.challenge_name)">
 	</div>
 
-     <!--<div class="col col-40" style="text-align: right;">
+     <div class="col col-40" style="text-align: right;">
 		<img src="img/arrow_up.png" style="width: 25%"><br>
 		<label style="color: #fff; padding-right: 8px;">{{video.video_score}}</label><br>
 		<img src="img/arrow_down.png" style="width: 25%">
-	</div>-->
+	</div>
 		
 	</div>
 
@@ -71,8 +60,8 @@
 		<label style="position: relative; top: -3px; color: #fff">share</label>		
 	</div>
 	<div class="col col-30" style="text-align: center;">
-		<img src="img/ic_favoriteRed.png" ng-show="{{video.is_fav}}" style="width: 20%" ng-click="addFav($event,video.video_id)">
-		<img src="img/ic_favorite.png" ng-show="!{{video.is_fav}}" style="width: 20%" ng-click="addFav($event, video.video_id)">
+		<img src="img/ic_favoriteRed.png" ng-show="{{video.is_fav}}" style="width: 20%" ng-click="addFav($event,video.video_id,video.category_id,video.challenge_id)">
+		<img src="img/ic_favorite.png" ng-show="!{{video.is_fav}}" style="width: 20%" ng-click="addFav($event, video.video_id,video.category_id,video.challenge_id)">
 			<label style="position: relative; top: -3px; color: #fff"> favorite</label>
 	</div>	
 	</div>

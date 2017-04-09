@@ -5702,7 +5702,7 @@ ion-tabs.tabs-striped.tabs-color-active-dark .tab-item.tab-item-active, ion-tabs
   display: block;
   margin: -1px;
   /*padding: 16px;*/
-  border-width: 1px;
+  /*border-width: 1px;*/
   border-style: solid;
   font-size: 16px; }
   .item h2 {
@@ -5990,7 +5990,7 @@ a.item.item-complex,
 button.item.item-complex {
   padding: 0; }
 
-.item-complex .item-content,
+
 .item-radio .item-content {
   position: relative;
   z-index: 2;

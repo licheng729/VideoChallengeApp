@@ -1,5 +1,4 @@
-<ion-view view-title="Favorites Challenges" align-title="center" ng-init="loadAllChallenge()" style="background: #111;">
-
+<ion-view view-title="Filtered categories" align-title="center" style="background: #111;">
 <ion-nav-bar class="bar-balanced nav-title-slide-ios7">
       <ion-nav-back-button>
       </ion-nav-back-button>
@@ -11,6 +10,8 @@
       </ion-floating-menu> 
 
 <ion-content>
+  <ion-refresher pulling-text="Pull to refresh..." on-refresh="refresh()">
+    </ion-refresher>
 <ion-list ng-model="data.categories">
 
 
@@ -38,7 +39,7 @@
 
      <div class="col col-40" style="text-align: right;">
 		<img src="img/arrow_up.png" style="width: 25%"><br>
-		<label style="color: #fff">{{challenges[challenges.length - 3]}}</label><br>
+		<label style="color: #fff; padding-right: 8px;">{{challenges[challenges.length - 3]}}</label><br>
 		<img src="img/arrow_down.png" style="width: 25%">
 	</div>
 		

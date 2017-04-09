@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-var app = angular.module('starter', ['ionic', 'ngPassword', 'ion-floating-menu', 'firebase', 'ngCordovaOauth', 'ngCordova']);
+var app = angular.module('starter', ['ionic', 'ngPassword', 'ion-floating-menu', 'firebase', 'ngCordovaOauth', 'ngCordova', 'ionic-sidemenu']);
 
 app
 .run(function($ionicPlatform, $rootScope, Auth, $location) {
@@ -52,6 +52,11 @@ if (user) {
      templateUrl: 'templates/login.html',
      controller: 'LoginCtrl'
     })
+    .state('reset', {
+     url: '/login',
+     templateUrl: 'templates/reset_password.html',
+     controller: 'ResetCtrl'
+    })
   .state('registration', {
      url: '/login',
      templateUrl: 'templates/registration.html',
@@ -61,7 +66,8 @@ if (user) {
       url: "/main",
       abstract: true,
       templateUrl: "templates/menu.html",
-      controller: 'HomeCtrl'
+      controller: 'HomeCtrl',
+      cache: false
     })
    .state('cat_challenge', {
       url: "/cat_challenge",
@@ -84,12 +90,25 @@ if (user) {
      .state('profile', {
       url: "/profile",
       templateUrl: "templates/profile.html",
-      controller: 'ProfileCtrl'
+      controller: 'ProfileCtrl',
+      cache:false
     })
-    .state('favorites', {
-      url: "/favorites",
+      .state('filter', {
+      url: "/filter",
+      templateUrl: "templates/filter.html",
+      controller: 'FilterCtrl',
+      cache:false
+    })
+    .state('favoritechallenges', {
+      url: "/favoritechallenges",
       templateUrl: "templates/favorite_challenges.html",
       controller: 'FavoritesChalCtrl',
+      cache: false
+    })
+     .state('favoritevideos', {
+      url: "/favoritevideos",
+      templateUrl: "templates/favorite_videos.html",
+      controller: 'FavoritesVideoCtrl',
       cache: false
     })
     .state('main.all_cat_challenge', {
@@ -156,6 +175,15 @@ if (user) {
         link: function($scope, element) {
             element.on('click', function() {
                 $state.go('favorites');
+            });
+        }
+    }
+}).directive('gotToFilter', function($state, $rootScope, $ionicPopup) {
+    return {
+        restrict: 'A',
+        link: function($scope, element) {
+            element.on('click', function() {
+                $state.go('filter');
             });
         }
     }

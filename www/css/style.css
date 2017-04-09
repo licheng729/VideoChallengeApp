@@ -4,6 +4,18 @@
 	background: #01b084;
 }
 
+.img-circle-menu {
+    border-radius: 100%;
+    max-width: 108px;
+}
+
+.img-circle-profile {
+  border-radius: 100%;
+    max-width: 108px;
+}
+}
+}
+
 .item-floating-label{
 	border:none;
 	 margin-bottom: 5px; 
@@ -128,13 +140,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002121', end
 video:-webkit-full-screen     { max-height: 100%; }
 
 .show{
-    display: none !important;
+    display: block; !important;
 }
 
 .hide{
-    display: block !important;
+    display: none !important;
 }
 
-.bar .title+.buttons.buttons-right{
-    right: -45px
+
+.bar .title+.buttons.buttons-right {
+    right: 25px;
+}
+
+.item-floating-label, .list .item.item-floating-label {
+    border-bottom: none;
 }

@@ -4,7 +4,7 @@
       </ion-nav-back-button>
     </ion-nav-bar>
 
-     <ion-nav-buttons side="right">
+ <ion-nav-buttons side="right">
       <img src="img/ic_roundplus.png" alt="plus_btn" style="width: 40%">
  </ion-nav-buttons>
 <ion-content class="bg">
@@ -36,7 +36,7 @@
 	</div>
 	<div class="col col-30" style="text-align: center;">
 		<img src="img/arrow_up.png" style="width: 20%" ng-click="upVote()">
-			<label style="position: relative; top: -3px; color: #fff">{{current_video.up_vote + current_video.favorite_count + current_video.comments_count}}</label>
+			<label style="position: relative; top: -3px; color: #fff">{{videoScore}}</label>
 	    <img src="img/arrow_down.png" ng-click="downVote()" style="width: 20%">
 	</div>	
 </div>

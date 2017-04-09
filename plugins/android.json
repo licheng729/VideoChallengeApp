@@ -51,6 +51,9 @@
         },
         "cordova-plugin-x-toast": {
             "PACKAGE_NAME": "com.videochallenge.app"
+        },
+        "cordova-plugin-actionsheet": {
+            "PACKAGE_NAME": "com.videochallenge.app"
         }
     },
     "dependent_plugins": {
